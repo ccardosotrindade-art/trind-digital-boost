@@ -735,7 +735,9 @@ function Footer() {
       <div className="container-page grid gap-10 lg:grid-cols-4">
         <div className="lg:col-span-2">
           <div className="flex flex-col">
-            <Logo />
+            <span className="text-lg font-bold tracking-tight text-foreground">
+              TRINDCARD WEB
+            </span>
             <p className="mt-2 text-sm font-medium text-primary/90">
               Seu site, sua vitrine digital sempre on
             </p>
