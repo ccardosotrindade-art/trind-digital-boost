@@ -87,13 +87,8 @@ function Navbar() {
       }`}
     >
       <nav className="container-page flex h-16 items-center justify-between md:h-20">
-        <a href="#top" className="flex items-center gap-2" aria-label="TrindCard Web - Início">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground font-black">
-            T
-          </span>
-          <span className="text-lg font-extrabold tracking-tight">
-            TrindCard <span className="text-primary">Web</span>
-          </span>
+        <a href="#top" className="flex items-center" aria-label="TrindCard Web - Início">
+          <Logo />
         </a>
         <ul className="hidden items-center gap-8 lg:flex">
           {links.map((l) => (
