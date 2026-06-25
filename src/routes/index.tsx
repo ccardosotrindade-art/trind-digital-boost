@@ -87,13 +87,13 @@ function Navbar() {
       }`}
     >
       <nav className="container-page flex h-16 items-center justify-between md:h-20">
-        <a href="#top" className="flex items-center gap-3" aria-label="TrindCard Web - Início">
-          <Logo className="h-10" />
-          <div className="hidden flex-col sm:flex">
-            <span className="text-sm font-bold tracking-tight text-foreground">
+        <a href="#top" className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-3" aria-label="TrindCard Web - Início">
+          <Logo className="h-10 shrink-0" />
+          <div className="flex min-w-0 flex-col">
+            <span className="text-sm font-bold tracking-tight text-foreground truncate">
               TRINDCARD WEB
             </span>
-            <span className="text-xs text-primary/90 leading-tight">
+            <span className="truncate text-xs leading-tight text-primary/90">
               Seu site, sua vitrine digital sempre on
             </span>
           </div>
