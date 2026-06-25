@@ -19,6 +19,8 @@ import team3 from "@/assets/team-3.jpg";
 import client1 from "@/assets/client-1.jpg";
 import client2 from "@/assets/client-2.jpg";
 import client3 from "@/assets/client-3.jpg";
+import trindcardLogo from "@/assets/Trindcard.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
