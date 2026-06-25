@@ -19,6 +19,8 @@ import team3 from "@/assets/team-3.jpg";
 import client1 from "@/assets/client-1.jpg";
 import client2 from "@/assets/client-2.jpg";
 import client3 from "@/assets/client-3.jpg";
+import trindcardLogo from "@/assets/Trindcard.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,6 +48,19 @@ export const Route = createFileRoute("/")({
 const WHATSAPP =
   "https://wa.me/5547996508397?text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista%20da%20TrindCard%20Web.";
 
+function Logo({ className = "" }: { className?: string }) {
+  return (
+    <img
+      src={trindcardLogo.url}
+      alt="TrindCard Web"
+      className={`h-9 w-auto ${className}`}
+      width={240}
+      height={80}
+    />
+  );
+}
+
+
 /* ---------------- Navbar ---------------- */
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -72,13 +87,8 @@ function Navbar() {
       }`}
     >
       <nav className="container-page flex h-16 items-center justify-between md:h-20">
-        <a href="#top" className="flex items-center gap-2" aria-label="TrindCard Web - Início">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground font-black">
-            T
-          </span>
-          <span className="text-lg font-extrabold tracking-tight">
-            TrindCard <span className="text-primary">Web</span>
-          </span>
+        <a href="#top" className="flex items-center" aria-label="TrindCard Web - Início">
+          <Logo className="h-10" />
         </a>
         <ul className="hidden items-center gap-8 lg:flex">
           {links.map((l) => (
@@ -716,9 +726,8 @@ function Footer() {
     <footer id="contato" className="border-t border-border bg-[var(--surface)] py-14">
       <div className="container-page grid gap-10 lg:grid-cols-4">
         <div className="lg:col-span-2">
-          <div className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground font-black">T</span>
-            <span className="text-lg font-extrabold">TrindCard <span className="text-primary">Web</span></span>
+          <div className="flex items-center">
+            <Logo />
           </div>
           <p className="mt-4 max-w-md text-sm text-muted-foreground">
             Agência de desenvolvimento web focada em profissionalizar a presença
