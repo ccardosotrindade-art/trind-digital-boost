@@ -726,9 +726,8 @@ function Footer() {
     <footer id="contato" className="border-t border-border bg-[var(--surface)] py-14">
       <div className="container-page grid gap-10 lg:grid-cols-4">
         <div className="lg:col-span-2">
-          <div className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground font-black">T</span>
-            <span className="text-lg font-extrabold">TrindCard <span className="text-primary">Web</span></span>
+          <div className="flex items-center">
+            <Logo />
           </div>
           <p className="mt-4 max-w-md text-sm text-muted-foreground">
             Agência de desenvolvimento web focada em profissionalizar a presença
