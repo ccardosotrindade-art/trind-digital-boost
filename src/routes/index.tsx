@@ -48,6 +48,19 @@ export const Route = createFileRoute("/")({
 const WHATSAPP =
   "https://wa.me/5547996508397?text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista%20da%20TrindCard%20Web.";
 
+function Logo({ className = "" }: { className?: string }) {
+  return (
+    <img
+      src={trindcardLogo.url}
+      alt="TrindCard Web"
+      className={`h-9 w-auto ${className}`}
+      width={240}
+      height={80}
+    />
+  );
+}
+
+
 /* ---------------- Navbar ---------------- */
 function Navbar() {
   const [open, setOpen] = useState(false);
