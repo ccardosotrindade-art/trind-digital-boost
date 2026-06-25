@@ -88,6 +88,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "TrindCard Web" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "TrindCard Web — Sites profissionais para negócios locais" },
+      { name: "twitter:title", content: "TrindCard Web — Sites profissionais para negócios locais" },
+      { name: "description", content: "TrindCard Web offers professional website creation and editing services for small businesses." },
+      { property: "og:description", content: "TrindCard Web offers professional website creation and editing services for small businesses." },
+      { name: "twitter:description", content: "TrindCard Web offers professional website creation and editing services for small businesses." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6b73b22b-18c1-4d17-a427-504c5a9b4d67/id-preview-6e136442--a6f00321-c5c3-4ccf-b825-2e589ad661a5.lovable.app-1782307827089.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6b73b22b-18c1-4d17-a427-504c5a9b4d67/id-preview-6e136442--a6f00321-c5c3-4ccf-b825-2e589ad661a5.lovable.app-1782307827089.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
