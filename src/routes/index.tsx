@@ -734,8 +734,11 @@ function Footer() {
     <footer id="contato" className="border-t border-border bg-[var(--surface)] py-14">
       <div className="container-page grid gap-10 lg:grid-cols-4">
         <div className="lg:col-span-2">
-          <div className="flex items-center">
+          <div className="flex flex-col">
             <Logo />
+            <p className="mt-2 text-sm font-medium text-primary/90">
+              Seu site, sua vitrine digital sempre on
+            </p>
           </div>
           <p className="mt-4 max-w-md text-sm text-muted-foreground">
             Agência de desenvolvimento web focada em profissionalizar a presença
