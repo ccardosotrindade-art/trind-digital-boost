@@ -10,17 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 20
+          bun-version: latest
 
       - name: Instalar dependências
-        run: npm ci --legacy-peer-deps || npm install --legacy-peer-deps
+        run: bun install --frozen-lockfile || bun install
 
-      - name: Instalar react-is
-        run: npm install react-is --legacy-peer-deps
-
-      - run: npm run build
+      - name: Build
+        run: bun run build
 
       - name: Detectar diretório de build
         run: |
