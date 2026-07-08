@@ -27,12 +27,18 @@ jobs:
           else echo "ERRO: dist/ ou out/ não encontrado" && exit 1; fi
 
       - name: Validar build
+        shell: bash
         run: |
-          test -f "$BUILD_DIR/index.html" || (echo "ERRO: index.html não encontrado" && exit 1)
-          grep -qE 'src="/src/|src="\./src/|href="/src/' "$BUILD_DIR/index.html" && echo "ERRO: aponta para /src (source, não build)" && exit 1
+          set -o pipefail
+          test -f "$BUILD_DIR/index.html" || { echo "ERRO: index.html não encontrado"; exit 1; }
+          if grep -qE 'src="/src/|src="\./src/|href="/src/' "$BUILD_DIR/index.html"; then
+            echo "ERRO: index.html aponta para /src (source, não build)"; exit 1
+          fi
           if [ "$BUILD_DIR" = "dist" ]; then
-            test -d "$BUILD_DIR/assets" || (echo "ERRO: dist/assets não encontrado" && exit 1)
-            grep -q 'src="/assets/' "$BUILD_DIR/index.html" && echo "ERRO: assets absoluto, configure base: './'" && exit 1
+            test -d "$BUILD_DIR/assets" || { echo "ERRO: dist/assets não encontrado"; exit 1; }
+            if grep -q 'src="/assets/' "$BUILD_DIR/index.html"; then
+              echo "ERRO: assets com caminho absoluto, configure base: './'"; exit 1
+            fi
           fi
           echo "Build válido: $BUILD_DIR"
 
