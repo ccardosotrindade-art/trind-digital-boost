@@ -94,7 +94,7 @@ function Navbar() {
               TRINDCARD WEB
             </span>
             <span className="truncate text-xs leading-tight text-primary/90">
-              Seu site, sua vitrine digital sempre on
+              Sua vitrine digital sempre ON
             </span>
           </div>
         </a>
@@ -739,7 +739,7 @@ function Footer() {
               TRINDCARD WEB
             </span>
             <p className="mt-2 text-sm font-medium text-primary/90">
-              Seu site, sua vitrine digital sempre on
+              Sua vitrine digital sempre ON
             </p>
           </div>
           <p className="mt-4 max-w-md text-sm text-muted-foreground">
