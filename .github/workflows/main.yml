@@ -20,23 +20,44 @@ jobs:
       - name: Build
         run: bun run build
 
-      - name: Detectar diretório de build
-        run: |
-          if [ -d "dist/client" ]; then echo "BUILD_DIR=dist/client" >> $GITHUB_ENV
-          elif [ -d "dist" ] && [ -f "dist/index.html" ]; then echo "BUILD_DIR=dist" >> $GITHUB_ENV
-          elif [ -d "out" ]; then echo "BUILD_DIR=out" >> $GITHUB_ENV
-          else echo "ERRO: diretório de build não encontrado (dist/client, dist ou out)" && ls -la && exit 1; fi
-
-      - name: Validar build
+      - name: Pré-renderizar HTML estático (SSR -> static)
         shell: bash
         run: |
-          set -o pipefail
-          if [ ! -f "$BUILD_DIR/index.html" ]; then
-            echo "AVISO: index.html não encontrado em $BUILD_DIR (app SSR - hospedagem estática pode não funcionar)"
+          set -e
+          rm -rf .wrangler
+          # Sobe o worker localmente com wrangler dev
+          (cd dist/server && bunx --bun wrangler dev --port 8787 --ip 127.0.0.1 > /tmp/wrangler.log 2>&1 &)
+          # Aguarda o servidor responder
+          READY=0
+          for i in $(seq 1 40); do
+            if curl -sf http://127.0.0.1:8787/ -o /tmp/home.html; then
+              READY=1; echo "Servidor pronto em ${i}s"; break
+            fi
+            sleep 1
+          done
+          if [ "$READY" != "1" ]; then
+            echo "ERRO: wrangler não respondeu a tempo"
+            tail -60 /tmp/wrangler.log
+            exit 1
           fi
-          test -d "$BUILD_DIR/assets" || echo "AVISO: $BUILD_DIR/assets não encontrado"
-          echo "Build detectado em: $BUILD_DIR"
-          ls -la "$BUILD_DIR"
+          # Salva index.html pré-renderizado
+          mv /tmp/home.html dist/client/index.html
+          echo "index.html gerado ($(wc -c < dist/client/index.html) bytes)"
+          # Encerra o worker
+          for pid in $(pgrep -f "wrangler dev" || true); do kill "$pid" 2>/dev/null || true; done
+
+      - name: Copiar .htaccess (SPA fallback)
+        run: cp public/.htaccess dist/client/.htaccess
+
+      - name: Validar build estático
+        shell: bash
+        run: |
+          set -e
+          test -f dist/client/index.html || { echo "ERRO: index.html não encontrado"; exit 1; }
+          test -d dist/client/assets || { echo "ERRO: dist/client/assets não encontrado"; exit 1; }
+          test -f dist/client/.htaccess || { echo "ERRO: .htaccess não encontrado"; exit 1; }
+          echo "Build estático OK"
+          ls -la dist/client
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
@@ -46,7 +67,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
-          local-dir: ${{ env.BUILD_DIR }}/
+          local-dir: dist/client/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           dangerous-clean-slate: true
           exclude: |
@@ -54,3 +75,4 @@ jobs:
             **/.github/**
             **/node_modules/**
             **/*.map
+            **/_headers
