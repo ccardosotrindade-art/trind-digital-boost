@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: bun run build
 
-       - name: Copy .htaccess (SPA fallback)
+      - name: Copy .htaccess (SPA fallback)
         run: cp public/.htaccess dist/client/.htaccess
 
       - name: Validate build static
