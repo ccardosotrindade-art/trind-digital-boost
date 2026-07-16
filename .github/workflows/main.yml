@@ -24,17 +24,17 @@ jobs:
          ls -R dist || true
 
       - name: Copy .htaccess (SPA fallback)
-        run: cp public/.htaccess dist/client/.htaccess
+        run: cp public/.htaccess .output/public/.htaccess
 
       - name: Validate build static
         shell: bash
         run: |
           set -e
-          test -f dist/client/index.html || { echo "ERROR: index.html not found"; exit 1; }
-          test -d dist/client/assets || { echo "ERROR: dist/client/assets not found"; exit 1; }
-          test -f dist/client/.htaccess || { echo "ERROR: .htaccess not found"; exit 1; }
+          test -f .output/public/index.html || { echo "ERROR: index.html not found"; exit 1; }
+          test -d .output/public/assets || { echo "ERROR: dist/client/assets not found"; exit 1; }
+          test -f .output/public/.htaccess || { echo "ERROR: .htaccess not found"; exit 1; }
           echo "Build static OK"
-          ls -la dist/client
+          ls -la .output/public
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
-          local-dir: dist/client/
+          local-dir: .output/public/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           dangerous-clean-slate: true
           exclude: |
