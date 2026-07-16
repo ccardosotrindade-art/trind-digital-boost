@@ -18,7 +18,10 @@ jobs:
         run: bun install --frozen-lockfile || bun install
 
       - name: Build
-        run: bun run build
+  run: |
+    bun run build
+    echo "=== Conteúdo da pasta dist ==="
+    ls -R dist || true
 
       - name: Copy .htaccess (SPA fallback)
         run: cp public/.htaccess dist/client/.htaccess
