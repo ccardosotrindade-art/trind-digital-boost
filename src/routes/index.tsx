@@ -23,27 +23,9 @@ import trindcardLogo from "@/assets/Trindcard.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "TrindCard Web — Sites profissionais para negócios locais" },
-      {
-        name: "description",
-        content:
-          "Desenvolvimento e manutenção de sites para profissionais liberais e pequenas empresas. Sua marca com autoridade digital, sem preocupações técnicas.",
-      },
-      { property: "og:title", content: "TrindCard Web — Sua marca com autoridade digital" },
-      {
-        property: "og:description",
-        content:
-          "Sites funcionais, otimizados e com suporte técnico próximo. Falamos por WhatsApp: (47) 99650-8397.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
   component: Home,
 });
+
 
 const WHATSAPP =
   "https://wa.me/5547996508397?text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista%20da%20TrindCard%20Web.";

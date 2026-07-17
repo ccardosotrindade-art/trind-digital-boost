@@ -17,24 +17,21 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile || bun install
 
-      - name: Build
-        run: |
-         bun run build
-         echo "=== Conteúdo da pasta dist ==="
-         find .output -type f
+      - name: Build (SPA estático)
+        run: bun run build
 
       - name: Copy .htaccess (SPA fallback)
-        run: cp public/.htaccess .output/public/.htaccess
+        run: cp public/.htaccess dist/.htaccess
 
-      - name: Validate build static
+      - name: Validate build
         shell: bash
         run: |
           set -e
-          test -f .output/public/index.html || { echo "ERROR: index.html not found"; exit 1; }
-          test -d .output/public/assets || { echo "ERROR: dist/client/assets not found"; exit 1; }
-          test -f .output/public/.htaccess || { echo "ERROR: .htaccess not found"; exit 1; }
-          echo "Build static OK"
-          ls -la .output/public
+          test -f dist/index.html || { echo "ERROR: dist/index.html não encontrado"; exit 1; }
+          test -d dist/assets     || { echo "ERROR: dist/assets não encontrado"; exit 1; }
+          test -f dist/.htaccess  || { echo "ERROR: dist/.htaccess não encontrado"; exit 1; }
+          echo "Build OK"
+          ls -la dist
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
@@ -44,7 +41,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
-          local-dir: .output/public/
+          local-dir: ./dist/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           dangerous-clean-slate: true
           exclude: |
@@ -52,4 +49,3 @@ jobs:
             **/.github/**
             **/node_modules/**
             **/*.map
-            **/_headers

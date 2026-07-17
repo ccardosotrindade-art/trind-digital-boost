@@ -10,7 +10,19 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    defaultNotFoundComponent: () => (
+      <div style={{ padding: 32, textAlign: "center" }}>
+        <h1>404</h1>
+        <p>Página não encontrada.</p>
+      </div>
+    ),
   });
 
   return router;
 };
+
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: ReturnType<typeof getRouter>;
+  }
+}
