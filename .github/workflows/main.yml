@@ -21,7 +21,7 @@ jobs:
         run: |
          bun run build
          echo "=== Conteúdo da pasta dist ==="
-         ls -R .output || true
+         find .output -type f
 
       - name: Copy .htaccess (SPA fallback)
         run: cp public/.htaccess .output/public/.htaccess
