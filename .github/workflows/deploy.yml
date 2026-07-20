@@ -17,7 +17,7 @@ jobs:
     - name: 🧰 Use Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: '22'          # Atualizado para evitar o aviso de Node.js obsoleto
         cache: 'npm'
 
     - name: 🔨 Install Dependencies
@@ -29,9 +29,8 @@ jobs:
     - name: 📂 Sync Files via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.trindcardweb.com.br
+        server: br1064.hostgator.com.br     # IP/Servidor direto da sua hospedagem para evitar o erro de ENOTFOUND
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/
         server-dir: ./
-        dangerous-clean-html: false
