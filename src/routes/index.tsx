@@ -190,21 +190,24 @@ function Hero() {
           <img
             src={s.img}
             alt=""
-            className="h-full w-full object-cover"
+            className={`h-full w-full object-cover transition-transform duration-[7000ms] ease-out ${
+              idx === i ? "scale-105" : "scale-100"
+            }`}
+            style={{ filter: "saturate(1.15) contrast(1.08) brightness(1.05)" }}
             width={1600}
             height={1000}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
         </div>
       ))}
 
       <div className="container-page relative grid min-h-[calc(100svh-5rem)] grid-cols-1 items-center gap-10 py-16 lg:grid-cols-12">
         <div key={i} className="animate-fade-up lg:col-span-7 max-w-2xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary backdrop-blur-sm">
             <Sparkles className="h-3.5 w-3.5" /> {slide.eyebrow}
           </span>
-          <h1 className="mt-5 text-4xl font-black leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-5 text-[1.75rem] font-black leading-[1.1] [text-shadow:0_2px_18px_hsl(var(--background))] sm:text-[2.15rem] md:text-[2.6rem] lg:text-[3.1rem]">
             {slide.title.split(" ").slice(0, -3).join(" ")}{" "}
             <span className="text-gradient-primary">
               {slide.title.split(" ").slice(-3).join(" ")}
