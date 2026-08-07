@@ -18,7 +18,7 @@ import claudioPortrait from "@/assets/claudio-portrait.jpg.asset.json";
 import client1 from "@/assets/client-1.jpg";
 import client2 from "@/assets/client-2.jpg";
 import client3 from "@/assets/client-3.jpg";
-import trindcardLogo from "@/assets/Trindcard.png.asset.json";
+import trindcardLogo from "@/assets/trindcard-logo.png";
 
 
 export const Route = createFileRoute("/")({
