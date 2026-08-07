@@ -18,7 +18,7 @@ import claudioPortrait from "@/assets/claudio-portrait.jpg.asset.json";
 import client1 from "@/assets/client-1.jpg";
 import client2 from "@/assets/client-2.jpg";
 import client3 from "@/assets/client-3.jpg";
-import trindcardLogo from "@/assets/Trindcard.png.asset.json";
+import trindcardLogo from "@/assets/trindcard-logo.png";
 
 
 export const Route = createFileRoute("/")({
@@ -32,11 +32,11 @@ const WHATSAPP =
 function Logo({ className = "" }: { className?: string }) {
   return (
     <img
-      src={trindcardLogo.url}
+      src={trindcardLogo}
       alt="TrindCard Web"
-      className={`h-9 w-auto ${className}`}
-      width={240}
-      height={80}
+      className={`h-9 w-auto object-contain ${className}`}
+      width={500}
+      height={500}
     />
   );
 }
