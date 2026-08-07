@@ -161,7 +161,14 @@ const HERO_SLIDES = [
     title: "Atualizações sob demanda, sem custos ocultos.",
     sub: "Uma parceria estratégica para manter sua vitrine online sempre no ar, atualizada e performando.",
   },
+  {
+    img: hero4,
+    eyebrow: "Preço justo, qualidade profissional",
+    title: "Sites profissionais com custo bem abaixo do mercado.",
+    sub: "Você não precisa gastar uma fortuna para ter uma presença digital de alto nível: entregamos qualidade profissional com um investimento acessível.",
+  },
 ];
+
 
 function Hero() {
   const [i, setI] = useState(0);
