@@ -278,7 +278,7 @@ function Hero() {
 /* ---------------- Sobre ---------------- */
 const FOUNDER = {
   img: claudioPortrait.url,
-  name: "Claudio Cardoso",
+  name: "Cláudio Adão Trindade",
   role: "Administrador & Desenvolvedor Web",
 };
 const STATS = [
@@ -349,7 +349,7 @@ function Sobre() {
               <CardContent className="flex flex-col justify-center gap-4 p-6 md:p-8">
                 <p className="text-muted-foreground">
                   Formado em{" "}
-                  <span className="font-semibold text-foreground">Administração há mais de 15 anos</span>, Claudio soma{" "}
+                  <span className="font-semibold text-foreground">Administração há mais de 15 anos</span>, Cláudio soma{" "}
                   <span className="font-semibold text-foreground">mais de 25 anos de experiência no varejo físico e digital</span>{" "}
                   e grande expertise na gestão de pequenas e médias empresas.
                 </p>
