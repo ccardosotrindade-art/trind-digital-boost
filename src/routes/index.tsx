@@ -208,12 +208,13 @@ function Hero() {
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary backdrop-blur-sm">
             <Sparkles className="h-3.5 w-3.5" /> {slide.eyebrow}
           </span>
-          <h1 className="mt-5 text-[1.75rem] font-black leading-[1.1] [text-shadow:0_2px_18px_var(--background),0_1px_4px_var(--background)] sm:text-[2.15rem] md:text-[2.6rem] lg:text-[3.1rem]">
+          <h1 className="mt-5 text-[1.75rem] font-black leading-[1.1] [filter:drop-shadow(0_2px_10px_var(--background))_drop-shadow(0_1px_3px_var(--background))] sm:text-[2.15rem] md:text-[2.6rem] lg:text-[3.1rem]">
             {slide.title.split(" ").slice(0, -3).join(" ")}{" "}
-            <span className="text-gradient-primary">
+            <span className="text-primary">
               {slide.title.split(" ").slice(-3).join(" ")}
             </span>
           </h1>
+
           <p className="mt-6 max-w-xl text-base font-medium text-foreground/90 [text-shadow:0_1px_12px_var(--background),0_1px_3px_var(--background)] sm:text-lg">
             {slide.sub}
           </p>
