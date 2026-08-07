@@ -277,7 +277,7 @@ function Hero() {
 
 /* ---------------- Sobre ---------------- */
 const FOUNDER = {
-  img: team1,
+  img: claudioPortrait.url,
   name: "Claudio Cardoso",
   role: "Administrador & Desenvolvedor Web",
 };
