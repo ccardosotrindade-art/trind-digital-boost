@@ -278,7 +278,7 @@ function Hero() {
 /* ---------------- Sobre ---------------- */
 const FOUNDER = {
   img: claudioPortrait.url,
-  name: "Claudio Cardoso",
+  name: "Cláudio Adão Trindade",
   role: "Administrador & Desenvolvedor Web",
 };
 const STATS = [
