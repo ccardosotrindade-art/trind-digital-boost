@@ -214,9 +214,10 @@ function Hero() {
               {slide.title.split(" ").slice(-3).join(" ")}
             </span>
           </h1>
-          <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
+          <p className="mt-6 max-w-xl text-base font-medium text-foreground/90 [text-shadow:0_1px_12px_var(--background),0_1px_3px_var(--background)] sm:text-lg">
             {slide.sub}
           </p>
+
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button asChild size="lg" className="h-12 px-7 font-semibold shadow-[var(--shadow-glow)]">
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
