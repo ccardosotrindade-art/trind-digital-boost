@@ -197,8 +197,9 @@ function Hero() {
             width={1600}
             height={1000}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/75 to-background/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent" />
+
         </div>
       ))}
 
@@ -207,15 +208,16 @@ function Hero() {
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary backdrop-blur-sm">
             <Sparkles className="h-3.5 w-3.5" /> {slide.eyebrow}
           </span>
-          <h1 className="mt-5 text-[1.75rem] font-black leading-[1.1] [text-shadow:0_2px_18px_hsl(var(--background))] sm:text-[2.15rem] md:text-[2.6rem] lg:text-[3.1rem]">
+          <h1 className="mt-5 text-[1.75rem] font-black leading-[1.1] [text-shadow:0_2px_18px_var(--background),0_1px_4px_var(--background)] sm:text-[2.15rem] md:text-[2.6rem] lg:text-[3.1rem]">
             {slide.title.split(" ").slice(0, -3).join(" ")}{" "}
             <span className="text-gradient-primary">
               {slide.title.split(" ").slice(-3).join(" ")}
             </span>
           </h1>
-          <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
+          <p className="mt-6 max-w-xl text-base font-medium text-foreground/90 [text-shadow:0_1px_12px_var(--background),0_1px_3px_var(--background)] sm:text-lg">
             {slide.sub}
           </p>
+
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button asChild size="lg" className="h-12 px-7 font-semibold shadow-[var(--shadow-glow)]">
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
@@ -226,7 +228,7 @@ function Hero() {
               <a href="#servicos">Saiba Mais</a>
             </Button>
           </div>
-          <div className="mt-10 flex items-center gap-6 text-xs text-muted-foreground">
+          <div className="mt-10 flex items-center gap-6 text-xs font-medium text-foreground/80 [text-shadow:0_1px_8px_var(--background)]">
             <div className="flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-primary" /> Suporte próximo
             </div>
