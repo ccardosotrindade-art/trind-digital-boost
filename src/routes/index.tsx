@@ -275,15 +275,14 @@ function Hero() {
 }
 
 /* ---------------- Sobre ---------------- */
-const TEAM = [
-  { img: team1, name: "Claudio Cardoso", role: "Fundador & Desenvolvedor Web" },
-  { img: team2, name: "Marina Reis", role: "Gestão de Conteúdo & Suporte" },
-  { img: team3, name: "Lucas Hoffmann", role: "UI/UX & Performance" },
-];
+const FOUNDER = {
+  img: team1,
+  name: "Claudio Cardoso",
+  role: "Administrador & Desenvolvedor Web",
+};
 const STATS = [
-  { v: "+8", l: "Anos de experiência" },
-  { v: "+120", l: "Sites entregues" },
-  { v: "98%", l: "Clientes satisfeitos" },
+  { v: "+5", l: "Anos de experiência" },
+  { v: "100%", l: "Clientes satisfeitos" },
   { v: "24h", l: "Tempo médio de suporte" },
 ];
 
