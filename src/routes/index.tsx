@@ -228,7 +228,7 @@ function Hero() {
               <a href="#servicos">Saiba Mais</a>
             </Button>
           </div>
-          <div className="mt-10 flex items-center gap-6 text-xs text-muted-foreground">
+          <div className="mt-10 flex items-center gap-6 text-xs font-medium text-foreground/80 [text-shadow:0_1px_8px_var(--background)]">
             <div className="flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-primary" /> Suporte próximo
             </div>
