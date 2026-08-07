@@ -32,11 +32,11 @@ const WHATSAPP =
 function Logo({ className = "" }: { className?: string }) {
   return (
     <img
-      src={trindcardLogo.url}
+      src={trindcardLogo}
       alt="TrindCard Web"
-      className={`h-9 w-auto ${className}`}
-      width={240}
-      height={80}
+      className={`h-9 w-auto object-contain ${className}`}
+      width={500}
+      height={500}
     />
   );
 }
