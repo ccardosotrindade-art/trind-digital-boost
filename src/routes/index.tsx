@@ -313,7 +313,7 @@ function Sobre() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
           {STATS.map((s) => (
             <div
               key={s.l}
@@ -327,27 +327,42 @@ function Sobre() {
 
         <div className="mt-16">
           <h3 className="text-center text-xl font-bold sm:text-2xl">Conheça quem está por trás</h3>
-          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {TEAM.map((t) => (
-              <Card key={t.name} className="overflow-hidden border-border bg-card transition-transform hover:-translate-y-1">
-                <div className="aspect-[4/3] overflow-hidden">
+          <Card className="mx-auto mt-8 max-w-4xl overflow-hidden border-border bg-card">
+            <div className="grid grid-cols-1 md:grid-cols-[minmax(0,320px)_minmax(0,1fr)]">
+              <div className="flex flex-col">
+                <div className="aspect-[4/3] overflow-hidden md:aspect-square">
                   <img
-                    src={t.img}
-                    alt={`Foto de ${t.name}`}
+                    src={FOUNDER.img}
+                    alt={`Foto de ${FOUNDER.name}`}
                     loading="lazy"
                     width={800}
                     height={800}
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="h-full w-full object-cover"
                   />
                 </div>
-                <CardContent className="p-6">
-                  <div className="text-lg font-bold">{t.name}</div>
-                  <div className="text-sm text-primary">{t.role}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                <div className="p-6 pb-0 md:pb-6">
+                  <div className="text-lg font-bold">{FOUNDER.name}</div>
+                  <div className="text-sm text-primary">{FOUNDER.role}</div>
+                </div>
+              </div>
+              <CardContent className="flex flex-col justify-center gap-4 p-6 md:p-8">
+                <p className="text-muted-foreground">
+                  Formado em{" "}
+                  <span className="font-semibold text-foreground">Administração há mais de 15 anos</span>, Claudio soma{" "}
+                  <span className="font-semibold text-foreground">mais de 25 anos de experiência no varejo físico e digital</span>{" "}
+                  e grande expertise na gestão de pequenas e médias empresas.
+                </p>
+                <p className="text-muted-foreground">
+                  É essa vivência de campo, aliada ao conhecimento técnico, que orienta cada
+                  projeto: sites que não apenas ficam bonitos, mas que{" "}
+                  <span className="font-semibold text-foreground">realmente geram resultados</span>{" "}
+                  para o negócio do cliente.
+                </p>
+              </CardContent>
+            </div>
+          </Card>
         </div>
+
       </div>
     </section>
   );
