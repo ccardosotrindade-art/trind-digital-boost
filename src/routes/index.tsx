@@ -15,6 +15,7 @@ import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import hero4 from "@/assets/hero-4.jpg";
 import claudioPortrait from "@/assets/claudio-portrait.jpg";
+import larissaPhoto from "@/assets/larissa-trindade.jpg";
 import institutoPhoto from "@/assets/instituto-franciscinho-coordenadores.jpg";
 import domingasPhoto from "@/assets/domingas-trindade.jpg";
 import client1 from "@/assets/client-1.jpg";
@@ -726,7 +727,7 @@ const TESTIMONIALS: {
       "Precisávamos de um site que transmitisse a seriedade do nosso trabalho contábil. A TrindCard entregou exatamente isso: rápido, claro e fácil de atualizar. Nossos clientes chegam até nós já sabendo o que precisam.",
   },
   {
-    initials: "LS",
+    img: larissaPhoto,
     name: "Larissa Schlz Trindade",
     role: "Diretora — LST Engenharia",
     text:
