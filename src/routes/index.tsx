@@ -709,7 +709,41 @@ function Portfolio() {
 }
 
 /* ---------------- Depoimentos ---------------- */
-const TESTIMONIALS = [
+const TESTIMONIALS: {
+  img?: string;
+  initials?: string;
+  name: string;
+  role: string;
+  text: string;
+}[] = [
+  {
+    initials: "MV",
+    name: "Marcos Vieira",
+    role: "Sócio — Trindade Assessoria Contábil",
+    text:
+      "Precisávamos de um site que transmitisse a seriedade do nosso trabalho contábil. A TrindCard entregou exatamente isso: rápido, claro e fácil de atualizar. Nossos clientes chegam até nós já sabendo o que precisam.",
+  },
+  {
+    initials: "LS",
+    name: "Eng.ª Larissa Santos",
+    role: "Diretora — LST Engenharia",
+    text:
+      "O site novo valorizou nosso portfólio de obras e facilitou muito o pedido de orçamentos. O atendimento é direto, sem enrolação, e qualquer ajuste é resolvido rapidamente pelo WhatsApp.",
+  },
+  {
+    initials: "AF",
+    name: "André Farias",
+    role: "Proprietário — Lajes Jaraguá",
+    text:
+      "Hoje o cliente vê nossos produtos e fala com a gente direto pelo site. Foi um investimento com custo bem abaixo do que eu imaginava e que já se pagou com as vendas que chegaram por ali.",
+  },
+  {
+    initials: "MA",
+    name: "Maria Aparecida Souza",
+    role: "Coordenadora — Instituto Franciscinho",
+    text:
+      "Precisávamos de uma página que apresentasse nosso trabalho social com transparência e ajudasse a captar apoio. O resultado ficou lindo e o suporte sempre esteve perto para nos ajudar.",
+  },
   {
     img: client1,
     name: "Juliana Martins",
@@ -757,14 +791,23 @@ function Depoimentos() {
               className="relative border-border bg-card transition-transform hover:-translate-y-1"
             >
               <CardContent className="grid gap-6 p-6 sm:grid-cols-[auto_1fr] sm:p-8">
-                <img
-                  src={t.img}
-                  alt={`Foto de ${t.name}`}
-                  loading="lazy"
-                  width={512}
-                  height={512}
-                  className="h-20 w-20 shrink-0 rounded-full object-cover ring-2 ring-primary/40"
-                />
+                {t.img ? (
+                  <img
+                    src={t.img}
+                    alt={`Foto de ${t.name}`}
+                    loading="lazy"
+                    width={512}
+                    height={512}
+                    className="h-20 w-20 shrink-0 rounded-full object-cover ring-2 ring-primary/40"
+                  />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xl font-black text-primary ring-2 ring-primary/40"
+                  >
+                    {t.initials}
+                  </div>
+                )}
                 <div>
                   <Quote className="h-6 w-6 text-primary" />
                   <p className="mt-2 text-base text-foreground/90 sm:text-lg">
