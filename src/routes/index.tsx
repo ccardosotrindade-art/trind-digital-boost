@@ -4,7 +4,7 @@ import {
   Menu, X, ArrowRight, ArrowLeft, MessageCircle, Check, Minus,
   Globe, Wrench, Gauge, Smartphone, Search, ShieldCheck,
   Headphones, Zap, Sparkles, Clock, Mail, MapPin, Instagram,
-  Star, Quote,
+  Star, Quote, ArrowUpRight, Lock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -56,6 +56,7 @@ function Navbar() {
     { href: "#sobre", label: "Sobre" },
     { href: "#servicos", label: "Serviços" },
     { href: "#diferenciais", label: "Diferenciais" },
+    { href: "#portfolio", label: "Portfólio" },
     { href: "#depoimentos", label: "Depoimentos" },
     { href: "#contato", label: "Contato" },
   ];
@@ -604,6 +605,109 @@ function Diferenciais() {
   );
 }
 
+/* ---------------- Portfólio ---------------- */
+const PORTFOLIO = [
+  {
+    name: "Trindade Assessoria Contábil",
+    url: "https://trindadeassessoriacontabil.com.br/",
+    host: "trindadeassessoriacontabil.com.br",
+    tag: "Assessoria contábil",
+    desc: "Site institucional com apresentação de serviços e contato direto.",
+  },
+  {
+    name: "LST Engenharia",
+    url: "https://lstengenharia.com.br/",
+    host: "lstengenharia.com.br",
+    tag: "Engenharia",
+    desc: "Vitrine profissional para obras, serviços e orçamento.",
+  },
+  {
+    name: "Lajes Jaraguá",
+    url: "https://www.lajesjaragua.com.br/",
+    host: "lajesjaragua.com.br",
+    tag: "Lajes e pré-moldados",
+    desc: "Página de produtos e pedidos para quem vende pela internet.",
+  },
+  {
+    name: "Instituto Franciscinho",
+    url: "https://institutofrancisquinho.com.br/",
+    host: "institutofrancisquinho.com.br",
+    tag: "Instituto social",
+    desc: "Divulgação de projetos, ações sociais e formas de apoiar.",
+  },
+];
+
+function Portfolio() {
+  return (
+    <section id="portfolio" className="py-24 md:py-32">
+      <div className="container-page">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary">
+            Portfólio
+          </span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl md:text-5xl">
+            Alguns dos sites que já desenvolvemos
+          </h2>
+          <p className="mt-5 text-muted-foreground sm:text-lg">
+            Projetos reais, no ar, feitos para gerar contatos. Clique em qualquer
+            card para abrir o site em uma nova aba.
+          </p>
+        </div>
+
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {PORTFOLIO.map((p) => (
+            <a
+              key={p.name}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-card)] transition-transform hover:-translate-y-1"
+            >
+              <div className="flex items-center gap-3 border-b border-border bg-[var(--surface-elevated)] px-4 py-3">
+                <div className="flex shrink-0 gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-primary/60" />
+                </div>
+                <div className="flex min-w-0 flex-1 items-center gap-2 rounded-full bg-background/70 px-3 py-1.5">
+                  <Lock className="h-3 w-3 shrink-0 text-primary" />
+                  <span className="truncate text-xs text-muted-foreground">
+                    {p.host}
+                  </span>
+                </div>
+              </div>
+
+              <div className="relative flex flex-1 flex-col justify-between gap-6 p-6 sm:p-8">
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-primary/[0.08] to-transparent" />
+                <div className="relative">
+                  <span className="text-xs font-bold uppercase tracking-widest text-primary">
+                    {p.tag}
+                  </span>
+                  <h3 className="mt-2 text-xl font-black sm:text-2xl">{p.name}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
+                </div>
+                <div className="relative inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  Visitar site
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button asChild variant="default" className="font-semibold">
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+              Quero um site assim
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- Depoimentos ---------------- */
 const TESTIMONIALS = [
   {
@@ -762,6 +866,7 @@ function Footer() {
             <li><a href="#sobre" className="hover:text-primary">Sobre</a></li>
             <li><a href="#servicos" className="hover:text-primary">Serviços</a></li>
             <li><a href="#diferenciais" className="hover:text-primary">Diferenciais</a></li>
+            <li><a href="#portfolio" className="hover:text-primary">Portfólio</a></li>
             <li><a href="#depoimentos" className="hover:text-primary">Depoimentos</a></li>
             <li><a href="#sobre" className="hover:text-primary">Saiba Mais</a></li>
           </ul>
@@ -830,6 +935,7 @@ function Home() {
       <Sobre />
       <Servicos />
       <Diferenciais />
+      <Portfolio />
       <Depoimentos />
       <CTAFinal />
       <Footer />
