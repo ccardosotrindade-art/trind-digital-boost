@@ -717,30 +717,30 @@ const TESTIMONIALS: {
   text: string;
 }[] = [
   {
-    initials: "MV",
-    name: "Marcos Vieira",
-    role: "Sócio — Trindade Assessoria Contábil",
+    initials: "DT",
+    name: "Domingas Trindade",
+    role: "Trindade Assessoria Contábil",
     text:
       "Precisávamos de um site que transmitisse a seriedade do nosso trabalho contábil. A TrindCard entregou exatamente isso: rápido, claro e fácil de atualizar. Nossos clientes chegam até nós já sabendo o que precisam.",
   },
   {
     initials: "LS",
-    name: "Eng.ª Larissa Santos",
+    name: "Larissa Schlz Trindade",
     role: "Diretora — LST Engenharia",
     text:
       "O site novo valorizou nosso portfólio de obras e facilitou muito o pedido de orçamentos. O atendimento é direto, sem enrolação, e qualquer ajuste é resolvido rapidamente pelo WhatsApp.",
   },
   {
-    initials: "AF",
-    name: "André Farias",
+    initials: "WR",
+    name: "Wesley Ribas",
     role: "Proprietário — Lajes Jaraguá",
     text:
       "Hoje o cliente vê nossos produtos e fala com a gente direto pelo site. Foi um investimento com custo bem abaixo do que eu imaginava e que já se pagou com as vendas que chegaram por ali.",
   },
   {
-    initials: "MA",
-    name: "Maria Aparecida Souza",
-    role: "Coordenadora — Instituto Franciscinho",
+    initials: "BJ",
+    name: "Bruno Marinho e Joline Trindade",
+    role: "Coordenadores — Instituto Franciscinho",
     text:
       "Precisávamos de uma página que apresentasse nosso trabalho social com transparência e ajudasse a captar apoio. O resultado ficou lindo e o suporte sempre esteve perto para nos ajudar.",
   },
