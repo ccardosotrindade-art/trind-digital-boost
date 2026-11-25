@@ -633,7 +633,7 @@ const PORTFOLIO = [
     desc: "Página de produtos e pedidos para quem vende pela internet.",
   },
   {
-    name: "Instituto Franciscinho",
+    name: "Instituto Francisquinho",
     url: "https://institutofrancisquinho.com.br/",
     host: "institutofrancisquinho.com.br",
     tag: "Instituto social",
@@ -744,7 +744,7 @@ const TESTIMONIALS: {
   {
     img: institutoPhoto,
     name: "Bruno Marinho e Joline Trindade",
-    role: "Coordenadores — Instituto Franciscinho",
+    role: "Coordenadores — Instituto Francisquinho",
     text:
       "Precisávamos de uma página que apresentasse nosso trabalho social com transparência e ajudasse a captar apoio. O resultado ficou lindo e o suporte sempre esteve perto para nos ajudar.",
   },
