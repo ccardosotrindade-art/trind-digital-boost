@@ -334,14 +334,14 @@ function Sobre() {
           <Card className="mx-auto mt-8 max-w-4xl overflow-hidden border-border bg-card">
             <div className="grid grid-cols-1 md:grid-cols-[minmax(0,320px)_minmax(0,1fr)]">
               <div className="flex flex-col">
-                <div className="aspect-[4/3] overflow-hidden md:aspect-square">
+                <div className="aspect-[4/5] overflow-hidden">
                   <img
                     src={FOUNDER.img}
                     alt={`Foto de ${FOUNDER.name}`}
                     loading="lazy"
-                    width={800}
-                    height={800}
-                    className="h-full w-full object-cover"
+                    width={768}
+                    height={960}
+                    className="h-full w-full object-cover object-center"
                   />
                 </div>
                 <div className="p-6 pb-0 md:pb-6">
