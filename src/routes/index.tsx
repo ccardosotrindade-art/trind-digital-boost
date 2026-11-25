@@ -15,6 +15,7 @@ import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import hero4 from "@/assets/hero-4.jpg";
 import claudioPortrait from "@/assets/claudio-portrait.jpg";
+import wesleyPhoto from "@/assets/wesley-ribas.jpg";
 import larissaPhoto from "@/assets/larissa-trindade.jpg";
 import institutoPhoto from "@/assets/instituto-franciscinho-coordenadores.jpg";
 import domingasPhoto from "@/assets/domingas-trindade.jpg";
@@ -734,7 +735,7 @@ const TESTIMONIALS: {
       "O site novo valorizou nosso portfólio de obras e facilitou muito o pedido de orçamentos. O atendimento é direto, sem enrolação, e qualquer ajuste é resolvido rapidamente pelo WhatsApp.",
   },
   {
-    initials: "WR",
+    img: wesleyPhoto,
     name: "Wesley Ribas",
     role: "Proprietário — Lajes Jaraguá",
     text:
