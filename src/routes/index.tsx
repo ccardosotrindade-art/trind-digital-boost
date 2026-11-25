@@ -15,6 +15,7 @@ import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import hero4 from "@/assets/hero-4.jpg";
 import claudioPortrait from "@/assets/claudio-portrait.jpg";
+import institutoPhoto from "@/assets/instituto-franciscinho-coordenadores.jpg";
 import domingasPhoto from "@/assets/domingas-trindade.jpg";
 import client1 from "@/assets/client-1.jpg";
 import client2 from "@/assets/client-2.jpg";
@@ -739,7 +740,7 @@ const TESTIMONIALS: {
       "Hoje o cliente vê nossos produtos e fala com a gente direto pelo site. Foi um investimento com custo bem abaixo do que eu imaginava e que já se pagou com as vendas que chegaram por ali.",
   },
   {
-    initials: "BJ",
+    img: institutoPhoto,
     name: "Bruno Marinho e Joline Trindade",
     role: "Coordenadores — Instituto Franciscinho",
     text:
